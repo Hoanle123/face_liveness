@@ -1,0 +1,64 @@
+1. Please unzip all zip files(001-074) in batches.
+2. Prefer to use 7-zip.
+
+A:Bounding box description:
+  - Produced by RetinaFace : https://github.com/deepinsight/insightface/tree/master/RetinaFace
+  @inproceedings{Deng2020CVPR,
+      title = {RetinaFace: Single-Shot Multi-Level Face Localisation in the Wild},
+      author = {Deng, Jiankang and Guo, Jia and Ververas, Evangelos and Kotsia, Irene and Zafeiriou, Stefanos},
+      booktitle = {CVPR},
+      year = {2020}
+  }
+    - e.g: metas/train/1/live/000184_BB.txt
+      bbox = [61 45 61 112 0.9970805]
+      bbox[0]: x value of the upper left corner
+      bbox[1]: y value of the upper left corner
+      bbox[2]: w value of bbox
+      bbox[3]: h value of bbox 
+      bbox[4]: score of bbox
+      - How to use bbox to crop face?
+        1. Get the shape of image: real_h, real_w
+        2. x1 = int(bbox[0]*(real_w / 224))
+           y1 = int(bbox[1]*(real_h / 224))
+           w1 = int(bbox[2]*(real_w / 224))
+           h1 = int(bbox[3]*(real_h / 224))
+        3. Then x1, y1, w1, h1 are the real bbox values of image
+
+B:Json file description:
+  key: path of image
+  value: label of image; [0:40]: face attribute labels, [40]: spoof type label, [41]: illumination label, [42]: Environment label [43]: live/spoof label
+
+C:Directory Structure:
+  - Data(All images)
+    - train
+      - ID
+        - live/spoof
+          - img and bounding box
+    - test
+      - ID
+        - live/spoof
+	  - img and bounding box
+  - metas
+    - intra-test(Intra-Dataset Benchmark)
+      - data_description
+      - train_label.json
+      - test_label.json
+
+    - protocol 1
+      - data_description
+      - train_label.json
+      - test_label.json
+
+    - protocol 2
+      - data_description
+      - test_on_high_quality_device
+        - train_label.json
+        - test_label.json
+      - test_on_middle_quality_device
+        - train_label.json
+        - test_label.json
+      - test_on_low_quality_device
+        - train_label.json
+        - test_label.json
+
+
