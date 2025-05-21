@@ -62,12 +62,13 @@ Run the main script:
  ```bash
 python main.py
  ```
-Controls:
+### Controls
 
-Press `q` to quit the camera window.
+- Press **`q`** to quit the camera window anytime.
 
-On screen:
+### On Screen Indicators
 
-"Live" indicates a real face
+- 🟢 **Live** — Indicates a **real face** detected.
+- 🚫 **Spoof** — Indicates a **fake face** (e.g., printed photo or video replay).
 
-"Spoof" indicates a fake face (e.g., printed photo)
+
