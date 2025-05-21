@@ -1,6 +1,6 @@
 # 🛡️ Anti Face-Spoofing
 
-**RecogitionAI** is a real-time face recognition and liveness detection system using YOLO, RetinaFace, ByteTrack, and face alignment. It captures webcam input, detects faces, checks for liveness (real vs. spoof), and tracks individuals using assigned IDs.
+**Anti Face-Spoofing** is a real-time face recognition and liveness detection system using YOLO, RetinaFace, ByteTrack, and face alignment. It captures webcam input, detects faces, checks for liveness (real vs. spoof), and tracks individuals using assigned IDs.
 
 ---
 
